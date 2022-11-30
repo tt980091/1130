@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>HomeWork</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script>
+        function clickF(){
+            var txtID = document.getElementById("txtID").value;
+            var gender = document.getElementsByName("radGender");
+            var txtEmail = document.getElementById("txtEmail").value;
+            var txtPwd = document.getElementById("txtPwd").value;
+            var chkA = document.getElementById("chkA");
+
+            if(gender[0].checked){
+                gender = "女";
+            }
+            else if(gender[1].checked){
+                gender = "男";
+            }
+            else{
+                gender = "";
+            }
+            
+            if(chkA.checked){
+                chkA = "我不是";
+            }
+            else{
+                chkA = "BIBIBOBO";
+            }
+
+            document.getElementById("show").innerHTML = "<hr><br>會員帳號:"+txtID+"<br>性別:"+gender+"<br>Email:"+txtEmail+"<br>機器人?:"+chkA;
+
+
+        }
+    </script>    
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12 col-md-8 ">
+                <form style="margin:20px">
+                    <h1>請輸入個人資訊</h1>
+                    <div class="form-group form-row">
+                        <label for="txtID" class="col-sm-2">
+                            帳號:
+                        </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control"
+                                   name="txtID" id="txtID">
+                        </div>
+                        <div class="col-sm-4">
+                            <label>性別:</label>
+                            <div class="form-check-inline">
+                                <input type="radio" name="radGender" id="radF" value="0">
+                                <label for="radM">男</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input type="radio" name="radGender" id="radM" value="1">
+                                <label for="radF">女</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label for="txtEmail" class="col-sm-2">
+                            Email:
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" name="txtEmail" id="txtEmail"
+                                   placeholder="請輸入電子郵件信箱">
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label for="txtPwd" class="col-sm-2">
+                            密碼:
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control"
+                                   name="txtPwd" id="txtPwd"
+                                   placeholder="請輸入密碼">
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label for="chkA">
+                            <input type="checkbox" name="chkA" id="chkA">
+                            我不是機器人
+                        </label>
+                    </div>
+                </form>
+                
+                <input class="btn btn-primary" type="submit" value="送出" onclick="clickF()"/>
+				<a href="../玠維的網頁/A110610304 黃玠維.html">BACK TO 履歷表</a>
+            </div>
+            <div class="col-12 col-md-4 ">
+
+                <p id="show" style="font-size:25px;"></p>
+
+            </div>
+        </div>
+        </div>
+
+</body>
+</html>
